@@ -1,8 +1,11 @@
 package solver;
 
- 
-public class Main{
+/**
+ * @author Jonathan Stang
+ * @author Trude Hjelmeland
+ */
 
+public class Main{
     public static void main(String[] args) {
         String input1, input2 = null;
 
@@ -13,7 +16,6 @@ public class Main{
                 input2 = args[1];
             } 
         } catch (Exception e) {
-            //TODO: handle exception
             System.out.println("Error: please provide coordinates on the form ");
             System.out.println("algebraic notation: a4 ");
             System.out.println("or :                0 1");
@@ -33,14 +35,17 @@ public class Main{
         solver.showBoard();
     }
 
+    /**
+     * Convert letter in algebraicnotation to correct 
+     * rownumber and coloumnumber
+     * @param input String containing algebraicnotation, ex. a4 
+     * @return String[] with rowNum and colNum, ex. [0, 4]
+     */
     public static String[] algebraicNotation(String input) {
         String cord1 = "" + input.charAt(0); // a letter
         String cord2 = "" + input.charAt(1); // a number
 
-        //Integer cord2Int = Integer.valueOf( cord2 );
-        //initalize initialColNumber
         int initialColNumber = -1;
-        //convert letter to rownumber
         switch (cord1) {
             case "a": initialColNumber = 0;
             break;
@@ -80,12 +85,7 @@ public class Main{
             case "8": initialRowNumber = 0;
             break;
             default: System.out.println("Please enter a co-ordinate following the algebraic notation, like a4 in the range a1 to h8 ");
-        }
-    
-
+        }  
         return new String[]{"" +initialRowNumber,"" + initialColNumber};
-    }
-
-
-    
+    }    
 }
