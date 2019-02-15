@@ -1,5 +1,5 @@
 # EightQueensProblem
-Given an initial queen position, this program prints to the command line a corresponding solution.
+Given an initial queen position, this program prints to the terminal a corresponding solution.
 
 ### How to run
  javac solver/*.java
