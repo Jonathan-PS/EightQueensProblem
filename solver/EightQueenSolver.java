@@ -38,7 +38,7 @@ public class EightQueenSolver {
         while (takenRows[i] == true){
             i++;
             if (i>7) {
-                System.out.println("Queen "+ ithQueen + " false 1");
+                //System.out.println("Queen "+ ithQueen + " false 1");
                 return false;
             }
         } 
@@ -52,7 +52,7 @@ public class EightQueenSolver {
             while (takenColumns[j] == true){
                 j++;
                 if (j>7) { // Failed to find any spots to put queen
-                    System.out.println("Queen"+ ithQueen + "false 2");
+                    //System.out.println("Queen"+ ithQueen + "false 2");
                     return false;
                 }
             } 
@@ -65,11 +65,11 @@ public class EightQueenSolver {
                 ithQueenPlaced = true;
                 takenRows[i] = true;
                 takenColumns[j] = true;
-                System.out.println("Queen "+  ithQueen + " FOUND a SPOT at " + i + j);
+                //System.out.println("Queen "+  ithQueen + " FOUND a SPOT at " + i + j);
             } else {
                 j++;
                 if (j>7) { // Failed to find any spots to put queen
-                    System.out.println("Queen"+ ithQueen + "false 3");
+                    //System.out.println("Queen"+ ithQueen + "false 3");
                     return false;
                 }
             }
@@ -78,7 +78,7 @@ public class EightQueenSolver {
             // RECURSIVELY PLACE NEXT QUEENS
             if(ithQueenPlaced == true && ithQueen == 7) {
                 allGood = true;
-                System.out.println("ALL PLACED and everything goood!");
+                //System.out.println("ALL PLACED and everything goood!");
             }
             
             if (ithQueenPlaced == true && ithQueen < 7){  // Recursive part
@@ -89,7 +89,7 @@ public class EightQueenSolver {
                     takenRows[i] = false;
                     j++;
                     if (j>7) { // Failed to find any spots to put queen
-                        System.out.println("Queen"+ ithQueen + "false ");
+                        //System.out.println("Queen"+ ithQueen + "false ");
                         return false;
                     }
                 } else {
@@ -98,7 +98,7 @@ public class EightQueenSolver {
             }
         }
 
-        System.out.println("Freedom!" + i);;
+        //System.out.println("Freedom!" + i);;
         return true;
     }
 
@@ -126,5 +126,38 @@ public class EightQueenSolver {
         }
 
         return diagonalCheck;
+    }
+
+    public void showBoard() {
+        char[][] board = new char[8][8];
+
+        //Initalize an empty board
+        for (int i= 0; i < 8; i++) {
+            char[] line = {'.','.','.','.','.','.','.','.'};
+            board[i] = line;
+        }
+
+        for (int[] queen: queens) {
+            board[ queen[0] ][ queen[1] ] = 'Q';
+        }
+
+        // PRINT TO TERMINAL
+        System.out.println("  A B C D E F G H");
+        System.out.println("  ---------------");
+
+        int i = 8;
+        for (char[] line: board) {
+            System.out.print(i+ "|");
+            for (char element: line) {
+                System.out.print(element+ " ");
+            }
+            System.out.print("|" + i);
+
+            i--;
+            System.out.println();
+        }
+        System.out.println("  ---------------");
+        System.out.println("  A B C D E F G H");
+
     }
 }
