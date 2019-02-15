@@ -152,7 +152,6 @@ public class EightQueenSolver {
         return diagonalCheck;
     }
 
-
     public void showBoard() {
         char[][] board = new char[8][8];
 
