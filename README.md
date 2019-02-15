@@ -1,6 +1,8 @@
 # EightQueensProblem
 _authors Jonathan Stang and Trude Hjelmeland_
 
+https://github.com/Jonathan-PS/EightQueensProblem
+
 Given an initial queen position, this program prints to the terminal a corresponding solution.
 
 ### How to run
