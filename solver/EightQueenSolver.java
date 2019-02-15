@@ -122,7 +122,6 @@ public class EightQueenSolver {
             //System.out.println("true on diag");
         } else {
             diagonalCheck = false; //Diagonal free
-            //System.out.println("false");
         }
 
         return diagonalCheck;
